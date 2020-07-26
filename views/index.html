@@ -1,0 +1,74 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A cool thing made with Glitch">
+
+    <title>Aristi Bingo</title>
+
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- CSS only bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    
+    <header>
+      <h1>Bingo Virtual</h1>
+    </header>
+
+    <div class="jumbotron">
+      <h1 class="display-4">Bienvenidos a Aristi-bingo</h1>
+      <p class="lead">En esta webapp se generara su carton virtual.</p>
+      <hr class="my-4">
+      <p>
+        La primera vez que ingrese se generara un carton de bingo al azar.
+        <br>
+        Cada carton se identifica con un numero o Id, el cual debe anotar para poder recuperar el carton en caso de cerrar la ventana por error.
+      </p>
+    </div>
+    
+    <div class="container p-2">
+      <h1>
+        Ingreso por primera vez
+      </h1>
+      <form class="col-10" action="ingresar" method="post">
+        <div class="form-group">
+          <label for="nombre">Nombre y Apellido</label>
+          <input type="text" class="form-control" id="nombre" aria-describedby="nombrelHelp" placeholder="nombre completo" name="nombre">
+          <small id="nombreHelp" class="form-text text-muted">Ingrese aqui su nombre completo porfavor</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Obtener mi Carton de AristiBingo</button>
+      </form>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div class="container p-2">
+      <h1>
+        Abrir carton de bingo
+      </h1>
+      <form class="col-10" action="cargar" method="post">
+        <div class="form-group">
+          <label for="carton_id">Id</label>
+          <input type="text" class="form-control" id="carton_id" aria-describedby="cartonlHelp" placeholder="numero de carton">
+          <small id="cartonHelp" class="form-text text-muted">Ingrese el numero de identificacion de su carton</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Retomar Carton</button>
+      </form>
+    </div>
+    
+    <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
+
+  </body>
+</html>
